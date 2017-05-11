@@ -156,7 +156,7 @@ BackgroundItem {
                     font.underline: true
                     color: Theme.highlightColor
                     text: relationPartnerName
-
+                    visible: relationPartnerId
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
