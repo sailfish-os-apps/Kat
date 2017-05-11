@@ -115,21 +115,21 @@ Page {
                 onClicked: pageContainer.push(Qt.resolvedUrl("PhotoAlbumPage.qml"), { ownerId: groupId })
             }
 
-//            MoreButton {
-//                width: parent.width
-//                height: Theme.itemSizeMedium
-//                text: qsTr("Audios")
-//                counter: group.audiosCount
-//                visible: group.audiosCount !== 0
-//            }
+            MoreButton {
+                width: parent.width
+                height: Theme.itemSizeMedium
+                text: qsTr("Audios")
+                counter: group.audiosCount
+                visible: group.audiosCount !== 0
+            }
 
-//            MoreButton {
-//                width: parent.width
-//                height: Theme.itemSizeMedium
-//                text: qsTr("Videos")
-//                counter: group.videosCount
-//                visible: group.videosCount !== 0
-//            }
+            MoreButton {
+                width: parent.width
+                height: Theme.itemSizeMedium
+                text: qsTr("Videos")
+                counter: group.videosCount
+                visible: group.videosCount !== 0
+            }
 
             MoreButton {
                 width: parent.width
@@ -141,13 +141,13 @@ Page {
                 onClicked: pageContainer.push(Qt.resolvedUrl("TopicsPage.qml"), { ownerId: groupId })
             }
 
-//            MoreButton {
-//                width: parent.width
-//                height: Theme.itemSizeMedium
-//                text: qsTr("Documents")
-//                counter: group.docsCount
-//                visible: group.docsCount !== 0
-//            }
+            MoreButton {
+                width: parent.width
+                height: Theme.itemSizeMedium
+                text: qsTr("Documents")
+                counter: group.docsCount
+                visible: group.docsCount !== 0
+            }
 
             MoreButton {
                 id: wallButton

@@ -212,27 +212,42 @@
     <message>
         <location filename="../qml/pages/GroupProfilePage.qml" line="104"/>
         <source>Members</source>
-        <translation>Leden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/GroupProfilePage.qml" line="111"/>
         <source>Photos</source>
-        <translation>Foto&apos;s</translation>
+        <translation type="unfinished">Foto&apos;s</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GroupProfilePage.qml" line="121"/>
+        <source>Audios</source>
+        <translation type="unfinished">Audio</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GroupProfilePage.qml" line="129"/>
+        <source>Videos</source>
+        <translation type="unfinished">Videos</translation>
     </message>
     <message>
         <location filename="../qml/pages/GroupProfilePage.qml" line="137"/>
         <source>Topics</source>
-        <translation>Onderwerpen</translation>
+        <translation type="unfinished">Onderwerpen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GroupProfilePage.qml" line="147"/>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/GroupProfilePage.qml" line="156"/>
         <source>Wall</source>
-        <translation>Prikbord</translation>
+        <translation type="unfinished">Prikbord</translation>
     </message>
     <message>
         <location filename="../qml/pages/GroupProfilePage.qml" line="183"/>
         <source>Load more</source>
-        <translation>Laad meer</translation>
+        <translation type="unfinished">Laad meer</translation>
     </message>
 </context>
 <context>
@@ -249,49 +264,6 @@
         <location filename="../qml/pages/LoginPage.qml" line="51"/>
         <source>Logged to vk.com with Kat</source>
         <translation>Ingelogd op vk.com met Kat</translation>
-    </message>
-</context>
-<context>
-    <name>MainMenuPage</name>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="29"/>
-        <source>My profile</source>
-        <translation>Mijn profiel</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="30"/>
-        <source>News</source>
-        <translation>Nieuws</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="31"/>
-        <source>Messages</source>
-        <translation>Berichten</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="32"/>
-        <source>Friends</source>
-        <translation>Vrienden</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="33"/>
-        <source>Groups</source>
-        <translation>Groepen</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="94"/>
-        <source>About</source>
-        <translation>Over</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="99"/>
-        <source>Logout</source>
-        <translation>Uitloggen</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="104"/>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -331,83 +303,108 @@
 <context>
     <name>ProfilePage</name>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="227"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="236"/>
         <source>Photos</source>
         <translation>Foto&apos;s</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="238"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="246"/>
         <source>Videos</source>
         <translation>Videos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="268"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="276"/>
         <source>Notes</source>
         <translation>Aantekeningen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="48"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="50"/>
         <source>Open in browser</source>
         <translation>Openen in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="324"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="332"/>
         <source>The user is baned</source>
         <translation>De gebruiker is verbannen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="85"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="83"/>
         <source>Go to dialog</source>
         <translation>Ga naar gesprekken</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="53"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="55"/>
         <source>Remove from blacklist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="53"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="55"/>
         <source>Add to blacklist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/ProfilePage.qml" line="64"/>
+        <source>About</source>
+        <translation type="unfinished">Over</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilePage.qml" line="70"/>
+        <source>Logout</source>
+        <translation type="unfinished">Uitloggen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilePage.qml" line="76"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilePage.qml" line="130"/>
         <location filename="../qml/pages/ProfilePage.qml" line="132"/>
-        <location filename="../qml/pages/ProfilePage.qml" line="134"/>
         <source>Last seen: </source>
         <translation>Laatst gezien:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="132"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="130"/>
         <source>Last seen female: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="215"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="205"/>
+        <source>News</source>
+        <translation type="unfinished">Nieuws</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilePage.qml" line="214"/>
         <source>Friends</source>
         <translation>Vrienden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="247"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="226"/>
+        <source>Messages</source>
+        <translation type="unfinished">Berichten</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilePage.qml" line="255"/>
         <source>Audios</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="256"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="264"/>
         <source>Groups</source>
         <translation>Groepen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="277"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="285"/>
         <source>Wall</source>
         <translation>Prikbord</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="323"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="331"/>
         <source>The user is deleted</source>
         <translation>De gebruiker is verwijderd</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilePage.qml" line="306"/>
+        <location filename="../qml/pages/ProfilePage.qml" line="314"/>
         <source>Load more</source>
         <translation>Laad meer</translation>
     </message>
