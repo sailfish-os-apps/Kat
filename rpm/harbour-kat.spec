@@ -25,6 +25,8 @@ BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Multimedia)
+BuildRequires:  pkgconfig(Qt5Concurrent)
 BuildRequires:  desktop-file-utils
 
 %description
@@ -52,6 +54,7 @@ The unofficial client for the most popular social network developed by Linux Use
 rm -rf %{buildroot}
 # >> install pre
 # << install pre
+
 %qmake5_install
 
 # >> install post

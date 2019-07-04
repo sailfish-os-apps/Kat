@@ -31,6 +31,8 @@ Page {
     property var profile
     property bool isBanned: false
 
+    property int unreadMessages: 0
+
     ViewPlaceholder {
         id: systemMessage
         enabled: false
@@ -58,30 +60,26 @@ Page {
                 }
             }
 
-//            MenuItem {
-//                text: profile.isFavorite ? qsTr("Remove from favorites") : qsTr("Add to favorites")
-//                onClicked: console.log("...favoriting...")
-//            }
-
-//            MenuItem {
-//                text: {
-//                    switch (profile.friendStatus) {
-//                    case 0:
-//                        if (!profile.canSendFriendRequest) visible = false
-//                        return qsTr("Add to friends")
-//                    case 2:
-//                        return qsTr("Add to friends")
-//                    case 1:
-//                        return qsTr("Cancel friend request")
-//                    case 3:
-//                        return qsTr("Remove from friends")
-//                    }
-//                }
-//                onClicked: console.log("...friending...")
-//            }
+            MenuItem {
+                text: qsTr("About")
+                visible: profileId == settings.userId()
+                onClicked: pageContainer.push(Qt.resolvedUrl("AboutPage.qml"))
+            }
 
             MenuItem {
-                visible: profile.canWritePrivateMessage
+                text: qsTr("Logout")
+                visible: profileId == settings.userId()
+                onClicked: logout()
+            }
+
+            MenuItem {
+                text: qsTr("Settings")
+                visible: profileId == settings.userId()
+                onClicked: pageContainer.push(Qt.resolvedUrl("SettingsPage.qml"))
+            }
+
+            MenuItem {
+                visible: profile.canWritePrivateMessage && profileId !== settings.userId()
                 text: qsTr("Go to dialog")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { chat: false,
@@ -144,14 +142,6 @@ Page {
             }
         }
 
-//        Image {
-//            anchors.horizontalCenter: parent.horizontalCenter
-//            width: Theme.iconSizeSmall
-//            height: Theme.iconSizeSmall
-//            source: "image://theme/icon-s-installed"
-//            visible: profile.verified
-//        }
-
         Column {
             id: content
             anchors.left: parent.left
@@ -209,15 +199,34 @@ Page {
             }
 
             MoreButton {
+                id: newsButton
+                width: parent.width
+                height: Theme.itemSizeMedium
+                text: qsTr("News")
+                visible: profileId == settings.userId()
+                onClicked: pageContainer.push(Qt.resolvedUrl("NewsfeedPage.qml"))
+            }
+
+            MoreButton {
                 id: friendsButton
                 width: parent.width
                 height: Theme.itemSizeMedium
                 text: qsTr("Friends")
-                counter: profile.counterFriends
+                counter: profile.counterFriends+"/"+profile.counterOnlineFriends
                 visible: profile.counterFriends > 0
 
                 onClicked: pageContainer.push(Qt.resolvedUrl("FriendsListPage.qml"),
                                               { userId: profile.id, type: 1 })
+            }
+
+            MoreButton {
+                id: dialogsButton
+                width: parent.width
+                height: Theme.itemSizeMedium
+                text: qsTr("Messages")
+                visible: profileId == settings.userId()
+                counter: unreadMessages
+                onClicked: pageContainer.push(Qt.resolvedUrl("DialogsListPage.qml"))
             }
 
             MoreButton {
@@ -227,7 +236,6 @@ Page {
                 text: qsTr("Photos")
                 counter: profile.counterPhotos
                 visible: profile.counterPhotos > 0
-
                 onClicked: pageContainer.push(Qt.resolvedUrl("PhotoAlbumPage.qml"), { ownerId: profile.id })
             }
 
@@ -326,6 +334,17 @@ Page {
             }
         }
         onBanSettingChanged: isBanned = banned
+
+        onGotUnreadCounter: {
+            unreadMessages = value;
+        }
+    }
+
+
+
+    Connections {
+        target: vksdk.longPoll
+        onUnreadDialogsCounterUpdated: unreadMessages = value;
     }
 
     onStatusChanged: {

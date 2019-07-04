@@ -42,10 +42,31 @@ ApplicationWindow
         if (settings.accessToken()) {
             vksdk.setAccessTocken(settings.accessToken())
             vksdk.setUserId(settings.userId())
-            return Qt.createComponent(Qt.resolvedUrl("pages/MainMenuPage.qml"))
+
+            if (!settings.offlineStatus()) {
+                vksdk.account.setOnline()
+                onlineTimer.start()
+            }
+            vksdk.stats.trackVisitor()
+            vksdk.users.getSelfProfile()
+            vksdk.messages.getDialogs()
+            vksdk.longPoll.getLongPollServer()
+            vksdk.dialogsListModel.clear()
+            vksdk.groupsListModel.clear()
+            vksdk.messagesModel.clear()
+            vksdk.newsfeedModel.clear()
+            vksdk.wallModel.clear()
+
+            pageStack.push(Qt.resolvedUrl("pages/ProfilePage.qml"), { profileId: settings.userId() })
         } else {
             return Qt.createComponent(Qt.resolvedUrl("pages/LoginPage.qml"))
         }
+    }
+
+    function logout() {
+        settings.removeAccessToken()
+        settings.removeUserId()
+        pageStack.replace(Qt.resolvedUrl("pages/LoginPage.qml"))
     }
 
     Notification {
@@ -69,6 +90,18 @@ ApplicationWindow
             commonNotification.previewBody = preview
             commonNotification.close()
             commonNotification.publish()
+        }
+    }
+
+    Timer {
+        id: onlineTimer
+        interval: 900000
+        repeat: true
+        triggeredOnStart: false
+
+        onTriggered: {
+            if (!settings.offlineStatus()) vksdk.account.setOnline()
+            else stop()
         }
     }
 }
